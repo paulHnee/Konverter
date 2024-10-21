@@ -1,8 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
-#include <stdlib.h>
 
-// Function for converting numbers between bases
+// Function to convert number between bases
 char* convertNumber(const char* input, int fromBase, int toBase) {
     static char result[65]; // Store the result as a string (up to 64 characters for binary)
     long long number = strtoll(input, NULL, fromBase); // Convert input to integer based on fromBase
@@ -19,7 +18,7 @@ char* convertNumber(const char* input, int fromBase, int toBase) {
     return &result[index + 1]; // Return the result string starting from the first non-empty character
 }
 
-// Window message processing function
+// Window procedure function
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     static HWND hwndInput, hwndFromBase, hwndToBase, hwndResult, hwndConvertButton;
     static char input[32], fromBase[3], toBase[3];

@@ -3,4 +3,5 @@ project(untitled1 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(untitled1 main.c)
+add_executable(untitled1 WIN32 main.c resource.rc)
+
